@@ -1,3 +1,249 @@
-<h1>这是川铭老奶奶</h1>
-<h1>这是川铭玩饥荒</h1>
-<div>疯狂星期四未必有我疯狂，明天疯狂星期四直接给小简包场</div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>川铭的日常</title>
+    <style>
+        /* ── 全局重置 & 字体 ── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(145deg, #f7f0e6 0%, #e8ddd0 100%);
+            font-family: 'PingFang SC', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+            padding: 1.5rem;
+        }
+
+        /* ── 主卡片 ── */
+        .card {
+            max-width: 620px;
+            width: 100%;
+            background: rgba(255, 248, 240, 0.85);
+            backdrop-filter: blur(4px);
+            border-radius: 2.5rem;
+            padding: 2.8rem 2.8rem 3rem;
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.12),
+                0 8px 20px rgba(0, 0, 0, 0.06),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 235, 215, 0.5);
+            transition: transform 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* ── 头部徽标 ── */
+        .badge {
+            display: inline-block;
+            background: #d4c5b2;
+            color: #4a3f36;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.25rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* ── 标题组 ── */
+        .title-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-bottom: 2.2rem;
+        }
+
+        .title-group h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            color: #2d241e;
+        }
+
+        .title-group h1:first-child {
+            color: #5a4a3a;
+        }
+
+        .title-group h1:last-child {
+            color: #3d322b;
+        }
+
+        /* 给第二个标题加一点小点缀 */
+        .title-group h1:last-child::after {
+            content: " 🎮";
+            font-size: 1.6rem;
+            margin-left: 0.2rem;
+        }
+
+        /* ── 分割装饰 ── */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin: 1.6rem 0 2rem;
+        }
+
+        .divider-line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #cbb7a4, transparent);
+        }
+
+        .divider-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #cbb7a4;
+            flex-shrink: 0;
+        }
+
+        /* ── 疯狂宣言 ── */
+        .crazy-box {
+            background: linear-gradient(135deg, #fce9d6, #f8dcc2);
+            border-radius: 1.8rem;
+            padding: 1.8rem 2rem;
+            border-left: 6px solid #e67e22;
+            box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 小装饰光晕 */
+        .crazy-box::before {
+            content: "🔥";
+            position: absolute;
+            right: 1.2rem;
+            bottom: 1.2rem;
+            font-size: 2.8rem;
+            opacity: 0.2;
+            transform: rotate(12deg);
+            pointer-events: none;
+        }
+
+        .crazy-box div {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #2d1f14;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .crazy-box .highlight {
+            display: inline-block;
+            background: #e67e22;
+            color: #fff;
+            font-weight: 700;
+            padding: 0.1rem 0.8rem;
+            border-radius: 100px;
+            font-size: 0.9em;
+            letter-spacing: 0.04em;
+            margin: 0 0.1rem;
+        }
+
+        .crazy-box .emoji-big {
+            font-size: 1.5rem;
+            display: inline-block;
+            margin-right: 0.2rem;
+        }
+
+        /* ── 脚标 ── */
+        .footer-meta {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: flex-end;
+            font-size: 0.75rem;
+            color: #b09a88;
+            letter-spacing: 0.04em;
+            border-top: 1px dashed #ddd0c2;
+            padding-top: 1.2rem;
+        }
+
+        .footer-meta span {
+            background: rgba(255, 255, 255, 0.4);
+            padding: 0.2rem 1rem;
+            border-radius: 100px;
+        }
+
+        /* ── 响应式 ── */
+        @media (max-width: 480px) {
+            .card {
+                padding: 1.8rem 1.5rem 2rem;
+                border-radius: 1.8rem;
+            }
+
+            .title-group h1 {
+                font-size: 1.8rem;
+            }
+
+            .crazy-box div {
+                font-size: 1.05rem;
+            }
+
+            .crazy-box {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .crazy-box::before {
+                font-size: 2rem;
+                right: 0.8rem;
+                bottom: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="card">
+
+        <!-- 小徽标（装饰） -->
+        <div class="badge">✦ 今日份 · 川铭</div>
+
+        <!-- 标题区 -->
+        <div class="title-group">
+            <h1>这是川铭老奶奶</h1>
+            <h1>这是川铭玩饥荒</h1>
+        </div>
+
+        <!-- 分割线 -->
+        <div class="divider">
+            <span class="divider-line"></span>
+            <span class="divider-dot"></span>
+            <span class="divider-line"></span>
+        </div>
+
+        <!-- 疯狂星期四宣言 -->
+        <div class="crazy-box">
+            <div>
+                <span class="emoji-big">🤪</span>
+                疯狂星期四未必有我疯狂，
+                <br />
+                <span class="emoji-big">🍗</span>
+                明天疯狂星期四直接给
+                <span class="highlight">小简</span>
+                包场！
+            </div>
+        </div>
+
+        <!-- 底部小尾巴 -->
+        <div class="footer-meta">
+            <span>⏳ 星期四 · 蓄力中</span>
+        </div>
+
+    </main>
+
+</body>
+</html>
