@@ -53,6 +53,60 @@ a {
   text-decoration: none;
 }
 
+html,
+body,
+body * {
+  cursor: url("assets/cursors/arrow.ani"), auto !important;
+}
+
+a,
+a *,
+button,
+button *,
+[role="button"],
+[role="button"] *,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+summary,
+summary *,
+label,
+label *,
+.primary-action,
+.primary-action *,
+.secondary-action,
+.secondary-action *,
+.portal-card,
+.portal-card *,
+.footer-links a,
+.footer-links a *,
+.nav-links a {
+  cursor: url("assets/cursors/link.ani"), pointer !important;
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+  cursor: url("assets/cursors/beam.ani"), text !important;
+}
+
+body.is-loading,
+body.is-loading * {
+  cursor: url("assets/cursors/working.ani"), progress !important;
+}
+
+button:disabled,
+[aria-disabled="true"],
+.is-disabled {
+  cursor: url("assets/cursors/no.ani"), not-allowed !important;
+}
+
+.board-grid,
+.feature-image,
+.anime-card {
+  cursor: url("assets/cursors/cross.ani"), crosshair !important;
+}
+
 .ambient-layer {
   position: fixed;
   inset: 0;
