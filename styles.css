@@ -56,7 +56,7 @@ a {
 html,
 body,
 body * {
-  cursor: url("assets/cursors/arrow.ani"), auto !important;
+  cursor: url("assets/cursors/arrow.cur?v=3"), url("assets/cursors/arrow.png?v=3") 8 5, url("assets/cursors/arrow.ani"), auto !important;
 }
 
 a,
@@ -81,30 +81,30 @@ label *,
 .footer-links a,
 .footer-links a *,
 .nav-links a {
-  cursor: url("assets/cursors/link.ani"), pointer !important;
+  cursor: url("assets/cursors/link.cur?v=3"), url("assets/cursors/link.png?v=3") 30 13, url("assets/cursors/link.ani"), pointer !important;
 }
 
 input,
 textarea,
 [contenteditable="true"] {
-  cursor: url("assets/cursors/beam.ani"), text !important;
+  cursor: url("assets/cursors/beam.cur?v=3"), url("assets/cursors/beam.png?v=3") 32 32, url("assets/cursors/beam.ani"), text !important;
 }
 
 body.is-loading,
 body.is-loading * {
-  cursor: url("assets/cursors/working.ani"), progress !important;
+  cursor: url("assets/cursors/working.cur?v=3"), url("assets/cursors/working.png?v=3") 32 32, url("assets/cursors/working.ani"), progress !important;
 }
 
 button:disabled,
 [aria-disabled="true"],
 .is-disabled {
-  cursor: url("assets/cursors/no.ani"), not-allowed !important;
+  cursor: url("assets/cursors/no.cur?v=3"), url("assets/cursors/no.png?v=3") 32 32, url("assets/cursors/no.ani"), not-allowed !important;
 }
 
 .board-grid,
 .feature-image,
 .anime-card {
-  cursor: url("assets/cursors/cross.ani"), crosshair !important;
+  cursor: url("assets/cursors/cross.cur?v=3"), url("assets/cursors/cross.png?v=3") 32 32, url("assets/cursors/cross.ani"), crosshair !important;
 }
 
 .ambient-layer {
@@ -1188,4 +1188,59 @@ button:disabled,
     align-items: flex-start;
     flex-direction: column;
   }
+}
+
+html,
+body,
+body * {
+  cursor: url("assets/cursors/arrow.cur?v=3"), url("assets/cursors/arrow.png?v=3") 8 5, url("assets/cursors/arrow.ani"), auto !important;
+}
+
+body a,
+body a *,
+body button,
+body button *,
+body [role="button"],
+body [role="button"] *,
+body input[type="button"],
+body input[type="submit"],
+body input[type="reset"],
+body summary,
+body summary *,
+body label,
+body label *,
+body .primary-action,
+body .primary-action *,
+body .secondary-action,
+body .secondary-action *,
+body .portal-card,
+body .portal-card *,
+body .footer-links a,
+body .footer-links a *,
+body .nav-links a,
+body .nav-links a * {
+  cursor: url("assets/cursors/link.cur?v=3"), url("assets/cursors/link.png?v=3") 30 13, url("assets/cursors/link.ani"), pointer !important;
+}
+
+body input,
+body textarea,
+body [contenteditable="true"] {
+  cursor: url("assets/cursors/beam.cur?v=3"), url("assets/cursors/beam.png?v=3") 32 32, url("assets/cursors/beam.ani"), text !important;
+}
+
+body.is-loading,
+body.is-loading * {
+  cursor: url("assets/cursors/working.cur?v=3"), url("assets/cursors/working.png?v=3") 32 32, url("assets/cursors/working.ani"), progress !important;
+}
+
+body button:disabled,
+body [aria-disabled="true"],
+body .is-disabled {
+  cursor: url("assets/cursors/no.cur?v=3"), url("assets/cursors/no.png?v=3") 32 32, url("assets/cursors/no.ani"), not-allowed !important;
+}
+
+body .board-grid,
+body .feature-image,
+body .anime-card {
+  cursor: url("assets/cursors/cross.cur?v=3"), url("assets/cursors/cross.png?v=3") 32 32, url("assets/cursors/cross.ani"), crosshair !important;
 }
